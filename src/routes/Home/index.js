@@ -16,9 +16,6 @@ export default function Home() {
             window.location.href = "/login"
             return 1;
         }
-        axios.get(`https://www.superheroapi.com/api.php/5327109537305573/1`).then(res => {
-            setMembers({data: [res.data]})
-        })
     }, [])
 
 
