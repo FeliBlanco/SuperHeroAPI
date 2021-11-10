@@ -1,6 +1,5 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import ReactDOM from 'react-dom'
 
 import './index.css'
 
@@ -60,18 +59,18 @@ export default function Home() {
                 alert("Ese superheroe ya esta en el equipo")
                 return 1;
             }
-            if(value.alignment == "good") {
+            if(value.biography.alignment == "good") {
                 alig_good += 1
             }
             else {
                 alig_bad += 1
             }
         })
-        if(alig_bad >= 3) {
+        if(alig_bad >= 3  && info.biography.alignment != "good") {
             alert("Ya hay 3 miembros con orientacion mala")
             return 1;
         }
-        if(alig_good >= 3) {
+        if(alig_good >= 3 && info.biography.alignment == "good") {
             alert("Ya hay 3 miembros con orientacion buena")
             return 1;            
         }
