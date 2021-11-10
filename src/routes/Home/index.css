@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+* {
+    font-family: 'Roboto', sans-serif;
+    padding:0;
+    margin:0;
+}
 .container {
     width: 80%;
     margin:0 auto;
@@ -7,6 +13,7 @@
     border-collapse: collapse;
     border-radius: 5px;
     overflow: hidden;
+    margin:50px 0;
 }
 
 td {
@@ -72,7 +79,7 @@ img {
 
 /* */
 
-#popup {
+.popup {
     position:fixed;
     top:0;
     bottom:0;
@@ -80,32 +87,56 @@ img {
     right:0;
     background:rgba(0, 0, 0, 0.5);
     z-index:999;
-    display:flex;
     justify-content: center;
     align-items: center;
     display:none;
 }
 
-#popupcontent {
+.popupcontent {
     width: 50%;
-    padding:20px;
+    max-height: 500px;
     background:#fff;
     position:relative;
     border-radius: 5px;
     border:1px solid #e1e1e1;
-    overflow-y:scroll;
-    overflow-y: visible;
+    overflow-y: auto;
 }
 
-.search {
-    padding:10px;
+.popupcontent > div {
+    padding:20px;
+}
+
+.popuptit {
+    border-bottom:1px solid #e1e1e1;
     display:flex;
-    justify-content: flex-end;
+    position:sticky;
+    top:0;
+    left:0;
+    background:#fff;
+}
+
+.popuptit span {
+    width: 100%;
+    text-align: center;
+    font-size:20px;
+}
+.search {
+    width: 100%;
+    box-sizing: border-box;
+    padding:10px;
+    font-size:18px;
 }
 
 input {
+    flex:1;
     outline:0;
     font-size:18px;
+    padding:4px;
+}
+
+.search button {
+    padding:5px;
+    cursor:pointer;
 }
 
 .popupClose {
@@ -114,10 +145,10 @@ input {
     background:#fff;
     border-radius: 50%;
     position:absolute;
-    right:-20px;
-    top:-20px;
+    right:20px;
+    top:8px;
     border:1px solid #e1e1e1;
-    box-shadow: 0px 0px 5px 0px #000;
+    box-shadow: 0px 0px 13px -8px #000;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -129,4 +160,51 @@ input {
 }
 .td-se:hover {
     background:#f5f5f5;
+}
+
+
+.contenedor {
+    margin: 2rem auto;
+    border: 1px solid #aaa;
+    height: 300px;
+    width:90%;
+    max-width: 400px;
+    background: #f1f2f3;
+    overflow:auto;
+    box-sizing: border-box;
+    padding:0 1rem;
+}
+
+/* Estilos para motores Webkit y blink (Chrome, Safari, Opera... )*/
+
+.popupcontent::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.popupcontent::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.popupcontent::-webkit-scrollbar-button:increment,.popupcontent::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.popupcontent::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.popupcontent::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.popupcontent::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+@media screen and (max-width:700px) {
+    .popupcontent {
+        width: 90%;
+    }
 }
